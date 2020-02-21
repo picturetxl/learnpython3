@@ -1,7 +1,7 @@
 '''
 @Author: your name
 @Date: 2020-02-20 17:35:46
-@LastEditTime: 2020-02-22 00:49:19
+@LastEditTime: 2020-02-22 00:55:53
 @LastEditors: Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: /python/project1/alien_invasion.py
@@ -65,6 +65,9 @@ def run_game():
 
         # 绘制子弹
         for bullet in bullets.sprites():
+            if bullet.rect.bottom < 0:
+                bullets.remove(bullet)
+                continue
             bullet.y -= bullet.speed_factor # 计算子弹的ｙ方向的位置
             bullet.rect.y = bullet.y # 更新子弹这个Rect的位置
             pygame.draw.rect(bullet.screen,bullet.color,bullet.rect)
