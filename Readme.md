@@ -187,3 +187,34 @@ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pygame
 ![image-20200220211701209](Untitled.assets/image-20200220211701209.png)
 
 ![image-20200220211713307](Untitled.assets/image-20200220211713307.png)
+
+
+### 小总结
+
+#### 流程
+
+##### 1.1 创建一个surface
+
+##### 1.2 确定surface的位置
+
+##### 1.3 绘制surface
+
++ 绘制背景屏幕: 
+
+  ```python
+  pygame.display.flip()# 绘制屏幕
+  ```
+
++ 绘制图形:  
+
+  ```python
+  pygame.draw.rect(bullet.screen,bullet.color,bullet.rect)
+  ```
+
++ 绘制图片:　
+
+  ```python
+  self.screen.blit(self.image,self.rect)
+  ```
+
+  
