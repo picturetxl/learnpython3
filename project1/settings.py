@@ -1,7 +1,7 @@
 '''
 @Author: your name
 @Date: 2020-02-20 17:58:46
-@LastEditTime: 2020-02-22 00:49:54
+@LastEditTime: 2020-02-24 20:17:20
 @LastEditors: Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: /python/project1/settings.py
@@ -22,5 +22,10 @@ class Settings():
         self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = 60,60,60
+
+        # 外星人的设置
+        self.alien_speed_factor = 1 #移动速度
+        self.fleet_drop_speed = 12
+        self.fleet_dicrection = 1#１:right -1: left
         
 

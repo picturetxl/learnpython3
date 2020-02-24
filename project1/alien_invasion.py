@@ -1,7 +1,7 @@
 '''
 @Author: your name
 @Date: 2020-02-20 17:35:46
-@LastEditTime: 2020-02-24 19:06:30
+@LastEditTime: 2020-02-24 20:19:30
 @LastEditors: Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: /python/project1/alien_invasion.py
@@ -61,7 +61,22 @@ def create_fleet(ai_settings,screen,ship,aliens):
             
             aliens.add(alien)
         
-
+def update_aliens(ai_settings,aliens):
+    flag = False
+    # 检测是否有外星人碰到边缘
+    for aline in aliens.sprites():#对于每一个group中的alien
+        if aline.check_edges():#只要有一个碰到边缘
+            ai_settings.fleet_dicrection*=-1#就将设置中的移动方向变反
+            flag = True
+            break#只要有一个检测到到达边缘，那么其他的就不用检验
+    for alien in aliens.sprites():#对于每一个group中的alien
+        alien.x += ai_settings.alien_speed_factor*ai_settings.fleet_dicrection
+        alien.rect.x = alien.x
+        if flag == True:
+            alien.rect.y += ai_settings.fleet_drop_speed
+    
+       
+            
 
 '''
 @description: run game
@@ -124,6 +139,7 @@ def run_game():
             bullet.rect.y = bullet.y # 更新子弹这个Rect的位置
             pygame.draw.rect(bullet.screen,bullet.color,bullet.rect)
         
+        update_aliens(ai_settings,aliens)
         for alien in aliens:
             alien.bliteme()
 

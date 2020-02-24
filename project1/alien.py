@@ -1,7 +1,7 @@
 '''
 @Author: your name
 @Date: 2020-02-24 17:52:52
-@LastEditTime: 2020-02-24 18:24:15
+@LastEditTime: 2020-02-24 19:50:28
 @LastEditors: Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: /learnpython3/project1/alien.py
@@ -22,9 +22,22 @@ class Alien(Sprite):
         
         self.rect.x = 10
         self.rect.y = 10
+        self.x = float(self.rect.x) #记录alien的位置
+
         
+            
+       
+        
+                
 
-        self.x = float(self.rect.x)
-
-    def bliteme(self):
+    def bliteme(self):# 绘制alien
         self.screen.blit(self.image,self.rect)
+
+
+    def check_edges(self):
+        screen_rect = self.screen.get_rect()
+        if self.rect.right >= screen_rect.right:#如果外星人的右边线的位置大于屏幕右边线的位置
+            return True
+        elif self.rect.left <=0:#外星人的左边线的位置小于０
+            return True
+        
