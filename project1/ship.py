@@ -1,7 +1,7 @@
 '''
 @Author: your name
 @Date: 2020-02-20 18:09:16
-@LastEditTime: 2020-02-20 19:03:05
+@LastEditTime: 2020-02-24 18:23:45
 @LastEditors: Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: /python/project1/ship.py
@@ -21,6 +21,7 @@ class Ship():
 
         self.ai_settings  =ai_settings
         self.image = pygame.image.load("images/spaceship.png") # 飞船的样子
+        self.image = pygame.transform.scale(self.image,(200,200)) # 放大缩小图像
         self.rect = self.image.get_rect() #飞船的尺寸
         self.moving_right = False
         self.moving_left = False

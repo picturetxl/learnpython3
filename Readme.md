@@ -1,5 +1,10 @@
 ## Environment
 
+> 这是一个在ubuntu环境中阅读下面这本书的全过程
+
+![image-20200224174032823](Untitled.assets/image-20200224174032823.png)
+
+
 ### editor
 
 + visual stdio code
